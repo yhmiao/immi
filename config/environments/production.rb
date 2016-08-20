@@ -1,6 +1,6 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  config.web_socket_server_url = "wss://polar-atoll-62458.herokuapp.com/messages"
+  config.web_socket_server_url = "wss://polar-atoll-62458.herokuapp.com/cable"
   config.action_cable.allowed_request_origins = ['https://polar-atoll-62458.herokuapp.com', 'http://polar-atoll-62458.herokuapp.com']
 
   # Code is not reloaded between requests.
