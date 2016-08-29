@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<div id="header">
+  <div class="section left-side">
+    <%= link_to contacts_path do %>
+      <span class="glyphicon glyphicon-chevron-left"></span>
+    <% end %>
+  </div>
+  <h3 class="section">Search</h3>
+  <div class="section right-side"></div>
+</div>
+
+<%= form_tag search_users_path do %>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="input-group">
+      	<%= text_field_tag :search, '', class: 'form-control', placeholder: "enter username..." %>
+        <span class="input-group-btn">
+          <%= submit_tag "find", class: "btn btn-default" %>
+        </span>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<% if @contact_search.search %>
+  <div class="user-add">
+    <% if @contact_search.user %>
+      <h4><%= @contact_search.user.username %></h4><br>
+      <% if @contact_search.in_contact %>
+        <div>Already in your contact.</div>
+      <% else %>
+        <%= link_to "Add", contacts_path(contactee_id: @contact_search.user.id), method: :post, class: "btn btn-primary w100" %>
+      <% end %>
+    <% else %>
+      <div>User not found.</div>
+    <% end %>
+  </div>
+<% end %>

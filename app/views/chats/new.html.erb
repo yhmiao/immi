@@ -1,0 +1,11 @@
+<div id="header">
+  <div class="section left-side">
+    <%= link_to chats_path do %>
+      <span class="glyphicon glyphicon-chevron-left"></span>
+    <% end %>
+  </div>
+  <h3 class="section">New Chat</h3>
+  <div class="section right-side"></div>
+</div>
+
+<%= render 'form', chat: @chat, chat_path: chats_path, contacts: @contacts %>

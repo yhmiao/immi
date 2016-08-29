@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<div id="header">
+  <div class="section left-side"></div>
+  <h3 class="section">Chats</h3>
+  <div class="section right-side"></div>
+</div>
+
+<div class="list-group">
+  <%= link_to new_chat_path, class: "list-group-item" do %>
+    <span class="glyphicon glyphicon-plus"></span> New
+  <% end %>
+  <% @chats.each do |chat| %>
+    <%= link_to chat_path(chat.token), class: "list-group-item" do %>
+      <%= chat_name(chat) %>
+    <% end %>
+  <% end %>
+</div>

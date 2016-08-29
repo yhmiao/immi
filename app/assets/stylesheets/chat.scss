@@ -1,0 +1,12 @@
+// Place all the styles related to the Chats controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#chat-messages {
+	height:80%;
+	overflow-y:auto;
+	background-color:#EEE;
+	.avatar {
+	  margin: 0.5rem;
+	}
+}

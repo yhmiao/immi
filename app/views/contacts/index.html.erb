@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<div id="header">
+  <div class="section left-side"></div>
+  <h3 class="section">Contacts</h3>
+  <div class="section right-side">
+    <%= link_to search_users_path do %>
+      <span class="glyphicon glyphicon-plus"></span>
+    <% end %>
+  </div>
+</div>
+
+<div class="list-group">
+  <% @contacts.each do |contact| %>
+    <%= link_to contact_path(contact), class: "list-group-item" do %>
+      <%= contact.contactee_username %>
+    <% end %>
+  <% end %>
+</div>

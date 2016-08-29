@@ -1,0 +1,32 @@
+<div id="header">
+  <div class="section left-side">
+    <%= link_to chats_path do %>
+      <span class="glyphicon glyphicon-chevron-left"></span>
+    <% end %>
+  </div>
+  <h3 class="section"><%= chat_name(@chat) %></h3>
+  <div class="section right-side">
+    <%= link_to edit_chat_path(@chat.token) do %>
+      <span class="glyphicon glyphicon-plus"></span>
+    <% end %>
+  </div>
+</div>
+
+<div id="chat-messages" data-chat-token="<%= @chat.token %>">
+	<% @chat.messages.each do |msg| %>
+		<%= render "messages/message", message: msg %>
+	<% end %>
+</div>
+
+<%= form_for @message, url: '#' do |f| %>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="input-group">
+      	<%= f.text_field :body, class: 'form-control', placeholder: "message...", autocomplete: "off" %>
+        <span class="input-group-btn">
+          <%= f.submit "post", class: "btn btn-default" %>
+        </span>
+      </div>
+    </div>
+  </div>
+<% end %> 

@@ -1,0 +1,27 @@
+<!-- <ul class="list-group">
+  <%#= f.collection_check_boxes(:contact_ids, contacts, :id, :username) do |contact| %>
+    <li class="list-group-item">
+        <%#= contact.label { contact.check_box } %>
+    </li>
+  <%# end %>
+</ul> -->
+
+<!-- <ul class="list-group">
+  <%# contacts.each do |contact| %>
+    <li class="list-group-item">
+        <label>
+        <%#= check_box_tag "chat[contact_ids][]", contact.id %>&nbsp;&nbsp;<%#= contact.username %>
+        </label>
+    </li>
+  <%# end %>
+</ul> -->
+
+<ul class="list-group">
+  <%= f.collection_check_boxes(:user_ids, contacts, :contactee_id, :contactee_username) do |contact| %>
+    <li class="list-group-item">
+        <%= contact.label do %>
+          <%= contact.check_box %>&nbsp;&nbsp;&nbsp;&nbsp;<%= contact.text %>
+        <% end %>
+    </li>
+  <% end %>
+</ul>

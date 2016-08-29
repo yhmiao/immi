@@ -1,0 +1,56 @@
+
+/************** Basic **************/
+
+.w100 {
+	width:100%;
+}
+
+/*************** End ***************/
+
+#main_container {
+	position:relative;
+	height:100vh;
+	border:1px solid #CCC;
+}
+
+#nav {
+	border-bottom:1px solid #CCC;
+	div {
+		padding-top:3px;
+		padding-bottom:3px;
+		text-align:center;
+		border-right:1px solid #CCC;
+
+		&:last-child {
+			border-right:none;
+		}
+	}
+}
+
+#header {
+	overflow:hidden;
+
+	.section {
+		padding:0px 5px;
+		float:left;
+	}
+
+	h3 {
+		width:60%;
+		margin:10px 0px 5px 0px;
+		text-align:center;
+	}
+
+	.left-side {
+		width:20%;
+		margin-top:15px;
+		margin-bottom:5px;
+	}
+
+	.right-side {
+		width:20%;
+		margin-top:15px;
+		margin-bottom:5px;
+		text-align:right;
+	}
+}
